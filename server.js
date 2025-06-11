@@ -6,10 +6,10 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoute.js";
 import blogRoutes from "./routes/blogRoutes.js";
 import paymentRoutes from "./routes/payment.js";
-
 import cors from "cors";
+
 dotenv.config();
-connectDb();
+
 const app = express();
 
 app.use(cors());
@@ -22,10 +22,10 @@ app.use("/api/v1/blog", blogRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+    res.send("Hello World!");
 });
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT;
 app.listen(port, () => {
-  console.log(`server running on ${port}`);
-});
+    console.log(`server running on ${port}`);
+}); 
